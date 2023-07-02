@@ -4,11 +4,18 @@
   "description": "An API gateway for payment processing",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
   },
   "author": "pead-pay-developers",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.2"
+    "@treblle/express": "^0.0.6",
+    "bcrypt": "^5.1.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongoose": "^7.3.1",
+    "nodemon": "^2.0.22"
   }
 }
