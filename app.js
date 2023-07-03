@@ -3,6 +3,10 @@ const express = require("express");
 const app = express();
 const port = 5000;
 const Treblle = require("@treblle/express");
+const cors = require("cors");
+
+// Initialize Cores with allowed origins
+app.use(cors(require("./Config/corsOptions")));
 
 // Initializing the Treblle Sdk as a global instance
 app.use(
