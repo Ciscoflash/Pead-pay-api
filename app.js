@@ -16,6 +16,9 @@ app.use(
   })
 );
 
+app.use(express.urlencoded(true));
+app.use(express.json());
+
 app.get("/", (req, res) => {
   res.send("Welcome to PEAD-PAY Payment Server");
 });
