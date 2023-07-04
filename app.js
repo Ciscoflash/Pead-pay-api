@@ -1,9 +1,8 @@
+const express = require('express')
+const app = express()
 require("dotenv").config();
-const express = require("express");
-const app = express();
-const port = 5000;
-const Treblle = require("@treblle/express");
-const cors = require("cors");
+const run = require('./Config/mongoDBConfig')
+const port = 5000
 
 // Initialize Cores with allowed origins
 app.use(cors(require("./Config/corsOptions")));
@@ -25,6 +24,7 @@ app.get("/", (req, res) => {
 
 app.use("/api/v1/payment", require("./Routes/Payment"));
 
+
 app.listen(port, () => {
-  console.log(`App is listening on port ${port}`);
-});
+  console.log(`App is listening on port ${port}`)
+})
