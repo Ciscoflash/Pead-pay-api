@@ -70,4 +70,35 @@ curl -X POST https://localhost:5000/api/v1/verify \
   }'
 ```
 
+**Steps to Run the API Locally**
+
+To run the Paed Pay API locally after cloning from the GitHub repository, follow these steps:
+
+- Clone the repository:
+```shell
+git clone https://github.com/Davidon4/paed-pay-api.git
+```
+- Change to the cloned directory:
+```shell
+cd paed-pay-api
+```
+- Install the dependencies:
+```shell
+npm install
+```
+- Set up the environment variables. Create a .env file in the root directory and define the following variables:
+```plaintext
+PORT=3000
+PAYSTACK_API_KEY=your_paystack_api_key
+```
+Replace your_paystack_api_key with your actual Paystack API key.
+
+- Start the API server:
+```shell
+npm start
+```
+
+The API will now be running locally on http://localhost:5000.
+
+You can use tools like cURL or API testing software to send requests to the locally running API endpoints as shown in the examples above.
 For more information, raise an issue, we will respond ASAP.
