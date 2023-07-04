@@ -1,11 +1,11 @@
 #Pead Pay API
 **Introduction**
 
-The Paed Pay API is a RESTful API that allows you to make and receive payments for medical services. The API uses Paystack, a Nigeria-based payment processor, to facilitate payments.
+The Pead Pay API is a RESTful API that allows you to make and receive payments for medical services. The API uses Paystack, a Nigeria-based payment processor, to facilitate payments.
 
 **Endpoints**
 
-The Paed Pay API has the following endpoints:
+The Pead Pay API has the following endpoints:
 
 - `/charge`: This endpoint is used to charge a customer's card.
 - `/refund`: This endpoint is used to refund a customer's payment.
@@ -13,7 +13,7 @@ The Paed Pay API has the following endpoints:
 
 **Request and Response Bodies**
 
-The request and response bodies for the Paed Pay API are JSON objects. The following table shows the required and optional fields for each endpoint:
+The request and response bodies for the Pead Pay API are JSON objects. The following table shows the required and optional fields for each endpoint:
 
 | Endpoint   | Required Fields                            | Optional Fields |
 |------------|--------------------------------------------|-----------------|
@@ -23,7 +23,7 @@ The request and response bodies for the Paed Pay API are JSON objects. The follo
 
 **Error Codes**
 
-The Paed Pay API returns the following error codes:
+The Pead Pay API returns the following error codes:
 
 - `400`: Bad request.
 - `401`: Unauthorized.
@@ -34,7 +34,7 @@ The Paed Pay API returns the following error codes:
 
 **Examples**
 
-The following are examples of how to use the Paed Pay API:
+The following are examples of how to use the Pead Pay API:
 
 - To charge a customer's card:
 
