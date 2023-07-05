@@ -1,7 +1,5 @@
-// const router = require('express').Router();
+const router = require("express").Router();
+const paymentController = require("../controllers/PaymentController");
 
-// app.route("/api/v1/").post(async (req, res) => {
-//   res.send("Welcome the official post request for payment");
-// });
-
-// module.exports = router;
+router.post("/", paymentController.payment);
+module.exports = router;
