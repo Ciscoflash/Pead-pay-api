@@ -7,7 +7,7 @@ The Pead Pay API is a RESTful API that allows you to make and receive payments f
 
 The Pead Pay API has the following endpoints:
 
-- `/charge`: This endpoint is used to charge a customer's card.
+- `/payment`: This endpoint is used to charge a customer's card.
 - `/refund`: This endpoint is used to refund a customer's payment.
 - `/verify`: This endpoint is used to verify a payment.
 
@@ -15,11 +15,11 @@ The Pead Pay API has the following endpoints:
 
 The request and response bodies for the Pead Pay API are JSON objects. The following table shows the required and optional fields for each endpoint:
 
-| Endpoint   | Required Fields                            | Optional Fields |
-|------------|--------------------------------------------|-----------------|
-| `/charge`  | `amount`, `currency`, `customer_email`, `customer_name`, `description` | `metadata`      |
-| `/refund`  | `transaction_id`                           | `amount`, `currency`      |
-| `/verify`  | `transaction_id`                           | `amount`, `currency`      |
+| Endpoint   | Required Fields                                                        | Optional Fields      |
+|------------|------------------------------------------------------------------------|----------------------|
+| `/payment` | `amount`, `currency`, `customer_email`, `customer_name`, `description` | `metadata`           |
+| `/refund`  | `transaction_id`                                                       | `amount`, `currency` |
+| `/verify`  | `transaction_id`                                                       | `amount`, `currency` |
 
 **Error Codes**
 
@@ -39,7 +39,7 @@ The following are examples of how to use the Pead Pay API:
 - To charge a customer's card:
 
 ```shell
-curl -X POST https://localhost:5000/api/v1/charge \
+curl -X POST https://localhost:5000/api/v1/payment \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
   -d '{
     "amount": 10000,
