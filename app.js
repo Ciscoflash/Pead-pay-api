@@ -1,16 +1,19 @@
 const express = require('express');
 const compression = require('compression');
 const app = express();
-const mongoose = require("mongoose");
 const treblle = require('@treblle/express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 require("dotenv").config();
 const logger = require('./utils/logger');
+const mongoDB = require('./configs/mongoConfig')
 const port = 5000
-
 const userRoutes = require("./routes/users");
-const paymentRoutes = require("./routes/payments");
+// const paymentRoutes = require("./routes/payments");
+
+
+// initialize DB
+mongoDB()
 // Compression middleware is used to compress the response bodies before sending them to the client.
 app.use(compression());
 
@@ -35,14 +38,7 @@ app.get("/", (req, res) => {
 app.use(`/api/v1/auth/`, userRoutes);
 
   /* Connecting to the database. */
-mongoose
-.connect(process.env.MONGODB_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  dbName: "Pead-api-db",
-})
-.then(() => logger.info("Database Connection is ready..."))
-.catch((err) => logger.error("DB CONNECTION ERROR: ", err));
+
 
 
 /* Listening to the port 5000 and printing the api and the server is running on port 5000. */
