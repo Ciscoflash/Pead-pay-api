@@ -72,15 +72,15 @@ curl -X POST https://localhost:5000/api/v1/verify \
 
 **Steps to Run the API Locally**
 
-To run the Paed Pay API locally after cloning from the GitHub repository, follow these steps:
+To run the Pead Pay API locally after cloning from the GitHub repository, follow these steps:
 
 - Clone the repository:
 ```shell
-git clone https://github.com/Davidon4/paed-pay-api.git
+git clone https://github.com/Davidon4/pead-pay-api.git
 ```
 - Change to the cloned directory:
 ```shell
-cd paed-pay-api
+cd pead-pay-api
 ```
 - Install the dependencies:
 ```shell
