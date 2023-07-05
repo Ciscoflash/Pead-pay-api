@@ -29,6 +29,12 @@ const userSchema = new Schema({
     trim: true,
     lowercase: true
   },
+
+  password: {
+    type: String,
+    required: true,
+  },
+
   dob: {
     type: Date,
     required: true,
