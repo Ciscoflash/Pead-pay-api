@@ -2,7 +2,14 @@ const User = require('../models/User');
 const { hashPassword } = require("../helpers/auth");
 const jwt = require("jsonwebtoken");
 const Joi = require('joi');
+const logger = require('../utils/logger');
 const { v4: uuidv4 } = require('uuid');
+
+function generateToken(userId) {
+    return jwt.sign({ _id: userId }, process.env.JWT_SECRET, {
+      expiresIn: "7d",
+    });
+  }
 
 exports.signup = async (req, res) => {
   try {
@@ -14,7 +21,7 @@ exports.signup = async (req, res) => {
       last_name: Joi.string().required(),
       email: Joi.string().email().required(),
       phone: Joi.string().required(),
-      dob: Joi.date().required(),
+      dob: Joi.date().format('DD-MM-YYYY').required(),
       house_address: Joi.string().required(),
       password: Joi.string()
         .min(6)
@@ -47,7 +54,7 @@ exports.signup = async (req, res) => {
       last_name,
       phone,
       email,
-      dob,
+      dob: new Date(dob),
       house_address,
       password: await hashPassword(password) // Assuming you have a hashPassword function
     });
@@ -55,17 +62,17 @@ exports.signup = async (req, res) => {
     try {
         console.log(newUser); // Check the newUser object
       await newUser.save();
-      return res.status(201).json({ message: "User created successfully" });
+
+        // Generate JWT token
+      const token = generateToken(userId);
+
+      return res.status(201).json({ message: "User created successfully", token});
     } catch (saveError) {
-        console.error(saveError); // Log the saveError object for debugging
+        logger.error(saveError); // Log the saveError object for debugging
       return res.status(500).json({ error: "Failed to save user to the database" });
     }
-    } catch (error) {
-    if (error.name === 'MongoTimeoutError') {
-      return res.status(500).json({ error: "Query timeout. Please try again later." });
-    } else {
-      console.error(error);
-      return res.status(500).json({ error: "Server error" });
-    }
+    } catch (err) {
+      logger.error(err);
+      return res.status(500).json({ error: "Internal server error" });
     }
 };
