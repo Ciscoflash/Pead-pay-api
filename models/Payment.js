@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const { v4: uuidv4 } = require("uuid");
 const paymentModel = mongoose.Schema(
   {
-    _id: { type: String },
+    _id: { type: String, default: uuidv4 },
     email: { type: String, required: true },
     amount: { type: Number, required: true },
     currency: { type: String, required: true },
