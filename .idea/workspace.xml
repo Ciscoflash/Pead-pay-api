@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5a3740d8-71b3-4817-8615-3154b1758a99" name="Changes" comment="created and tested middleware">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/PaymentController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/PaymentController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/UsersController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/UsersController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logfile.log" beforeDir="false" afterPath="$PROJECT_DIR$/logfile.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/payments.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/payments.js" afterDir="false" />
-    </list>
+    <list default="true" id="5a3740d8-71b3-4817-8615-3154b1758a99" name="Changes" comment="created and tested user controllers" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -45,7 +35,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Merging main",
+    "git-widget-placeholder": "main",
     "javascript.nodejs.core.library.configured.version": "18.16.0",
     "javascript.nodejs.core.library.typings.version": "18.16.0",
     "node.js.detected.package.eslint": "true",
@@ -66,7 +56,7 @@
       <updated>1688458504295</updated>
       <workItem from="1688458506942" duration="274000" />
       <workItem from="1688458872424" duration="5369000" />
-      <workItem from="1688570766947" duration="21040000" />
+      <workItem from="1688570766947" duration="21369000" />
     </task>
     <task id="LOCAL-00001" summary="Created Login, updated Documentation">
       <option name="closed" value="true" />
@@ -132,7 +122,15 @@
       <option name="project" value="LOCAL" />
       <updated>1688639048363</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="created and tested user controllers">
+      <option name="closed" value="true" />
+      <created>1688640517296</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1688640517296</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -186,6 +184,7 @@
     <MESSAGE value="Tested endpoints. Updated the configs." />
     <MESSAGE value="updated app.js" />
     <MESSAGE value="created and tested middleware" />
-    <option name="LAST_COMMIT_MESSAGE" value="created and tested middleware" />
+    <MESSAGE value="created and tested user controllers" />
+    <option name="LAST_COMMIT_MESSAGE" value="created and tested user controllers" />
   </component>
 </project>
