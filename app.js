@@ -18,7 +18,7 @@ mongoDB();
 app.use(
   compression({
     level: 6,
-    threshold: 10 * 1000,
+    threshold: 50 * 1000,
     filter: (req, res) => {
       if (req.headers["x-no-compression"]) {
         return false;
