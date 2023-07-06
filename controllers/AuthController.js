@@ -22,7 +22,7 @@ exports.signup = async (req, res) => {
       last_name: Joi.string().required(),
       email: Joi.string().email().required(),
       phone: Joi.string().required(),
-      dob: Joi.date().format('DD-MM-YYYY').required(),
+      dob: Joi.string().required(),
       house_address: Joi.string().required(),
       password: Joi.string()
         .min(6)
@@ -38,6 +38,13 @@ exports.signup = async (req, res) => {
       const errorMessage = `Bad Request ${error.details[0].message}`;
       return res.status(400).json({ error: errorMessage });
     }
+
+      // Parse the date of birth
+  //     const parsedDate = parseDate(dob);
+
+  // if (!parsedDate.isValid()) {
+  //   return res.status(400).json({ error: 'Invalid date of birth format' });
+  // }
 
     // Check if user already exists
     const existingUser = await User.findOne({ email });
@@ -55,7 +62,7 @@ exports.signup = async (req, res) => {
       last_name,
       phone,
       email,
-      dob: new Date(dob),
+      dob,
       house_address,
       password: await hashPassword(password) // Assuming you have a hashPassword function
     });
@@ -69,7 +76,7 @@ exports.signup = async (req, res) => {
 
       return res.status(201).json({ message: "User created successfully", token});
     } catch (saveError) {
-        logger.error(saveError); // Log the saveError object for debugging
+        console.error(saveError); // Log the saveError object for debugging
       return res.status(500).json({ error: "Failed to save user to the database" });
     }
     } catch (err) {

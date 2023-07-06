@@ -11,7 +11,6 @@ const port = 5000;
 const userRoutes = require("./routes/users");
 const paymentRoutes = require("./routes/payments");
 const mongoDB = require("./configs/mongoConfig");
-const userRoutes = require("./routes/users");
 // const paymentRoutes = require("./routes/payments");
 
 // initialize DB
@@ -30,6 +29,19 @@ app.use(
   })
 );
 
+// app.use((req, res, next) => {
+//   req.headers.accept = 'application/json';
+//   next();
+// });
+
+// app.use((req, res, next) => {
+//   res.header('Access-Control-Allow-Origin', '*');
+//   res.header('Access-Control-Allow-Headers', 'Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method');
+//   res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+//   res.header('Allow', 'GET, POST, PUT, DELETE');
+//   next();
+// });
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -43,14 +55,14 @@ app.use(`/api/v1/payment/`, paymentRoutes);
 /* Connecting to the database. */
 
 /* Connecting to the database. */
-mongoose
-  .connect(process.env.MONGODB_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    dbName: "Pead-api-db",
-  })
-  .then(() => logger.info("Database Connection is ready..."))
-  .catch((err) => logger.error("DB CONNECTION ERROR: ", err));
+// mongoose
+//   .connect(process.env.MONGODB_URI, {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+//     dbName: "Pead-api-db",
+//   })
+//   .then(() => logger.info("Database Connection is ready..."))
+//   .catch((err) => logger.error("DB CONNECTION ERROR: ", err));
 
 /* Listening to the port 5000 and printing the api and the server is running on port 5000. */
 app.listen(5000, () => {
