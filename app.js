@@ -63,10 +63,11 @@ app.get("/", (req, res) => {
   res.send("Welcome to PEAD-PAY Payment Server");
 });
 
+// User Routes
 app.use(`/api/v1/auth/`, userRoutes);
 
-app.use(`/api/v1/payments/`, paymentRoutes);
-/* Connecting to the database. */
+// Payment Route
+app.use(`/api/v1/payment/`, paymentRoutes);
 
 /* Listening to the port 5000 and printing the api and the server is running on port 5000. */
 app.listen(5000, () => {

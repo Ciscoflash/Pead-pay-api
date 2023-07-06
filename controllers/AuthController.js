@@ -97,22 +97,17 @@ exports.login = async (req, res) => {
     if (match) {
       // create jwt
       const accessToken = jwt.sign(
-        {
-          UserInfo: {
-            username: foundUser.username,
-            email: foundUser.email,
-          },
-        },
-        process.env.SECRET_TOKEN,
-        { expiresIn: "60s" }
-      );
+          {
+            "UserInfo":{
+              "email":foundUser.email
+            }
+          }, process.env.SECRET_TOKEN, {expiresIn: '60s'}
+      )
       const RefreshToken = jwt.sign(
-        {
-          username: foundUser.username,
-        },
-        process.env.REFRESH_TOKEN,
-        { expiresIn: "1d" }
-      );
+          {
+            "email":foundUser.email
+          }, process.env.REFRESH_TOKEN, {expiresIn: '1d'}
+      )
 
       // saving refresh token with current user
       foundUser.refresh_token = RefreshToken;
