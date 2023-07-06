@@ -14,7 +14,7 @@ const userRoutes = require("./routes/users");
 
 // initialize DB
 mongoDB()
-// Compression middleware is used to compress the response bodies before sending them to the client.
+// Compression middlewares is used to compress the response bodies before sending them to the client.
 app.use(compression());
 
 app.use(cors());
