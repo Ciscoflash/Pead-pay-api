@@ -223,3 +223,5 @@
 {"level":"error","timestamp":"2023-07-06 08:35:02"}
 {"level":"info","message":"server is running 5000","timestamp":"2023-07-06 08:36:06"}
 {"level":"info","message":"Database Connection is ready...","timestamp":"2023-07-06 08:36:09"}
+{"level":"info","message":"server is running 5000","timestamp":"2023-07-06 10:04:47"}
+{"level":"info","message":"Database Connection is ready...","timestamp":"2023-07-06 10:04:51"}
