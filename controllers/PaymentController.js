@@ -82,9 +82,15 @@ exports.payment = async (req, res) => {
 
 exports.getPayment = async (req, res) => {
   const payment = await paymentModel.find().exec();
-  res.send(payment);
+  // res.send(compressContent(payment));
+  res.json(payment);
 };
 
+function compressContent(content) {
+  const zlib = require("zlib");
+  const buffer = Buffer.from(content, "utf-8");
+  return zlib.gzipSync(buffer);
+}
 exports.paystackList = async (req, res) => {
   const https = require("https");
 
