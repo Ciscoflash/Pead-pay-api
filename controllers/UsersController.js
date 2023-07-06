@@ -15,7 +15,7 @@ exports.getUsers = async (req, res) => {
 
 exports.getSingleUser = async (req, res) => {
     const user = await User.findById(req.params.id)
-    if(!user) return res.sendStatus(404).json({msg:"no user found"})
+    if(!user) return res.json({msg:"no user found", code: 404})
     return res.json({
         code :200,
         msg: "success",
@@ -25,7 +25,7 @@ exports.getSingleUser = async (req, res) => {
 
 exports.deleteUser = async (req, res) =>{
     const user = await User.findOne({_id:req.params.id})
-    if(!user) return res.sendStatus(404).json({msg:"user not found"})
+    if(!user) return res.json({msg:"user not found", code: 404})
 
     await User.findOneAndDelete({_id:req.params.id})
     return res.json({
