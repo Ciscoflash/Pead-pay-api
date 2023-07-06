@@ -1,5 +1,5 @@
-const express = require('express');
-const compression = require('compression');
+const express = require("express");
+const compression = require("compression");
 const app = express();
 const treblle = require('@treblle/express');
 const cors = require('cors');
@@ -9,12 +9,12 @@ const logger = require('./utils/logger');
 const mongoDB = require('./configs/mongoConfig')
 const port = 5000
 const userRoutes = require("./routes/users");
+const paymentRoutes = require("./routes/payments");
 // const paymentRoutes = require("./routes/payments");
 
-
 // initialize DB
-mongoDB()
-// Compression middlewares is used to compress the response bodies before sending them to the client.
+mongoDB();
+// Compression middleware is used to compress the response bodies before sending them to the client.
 app.use(compression());
 
 app.use(cors());
@@ -37,11 +37,12 @@ app.get("/", (req, res) => {
 
 app.use(`/api/v1/auth/`, userRoutes);
 
-  /* Connecting to the database. */
+app.use(`/api/v1/payment/`, paymentRoutes);
+/* Connecting to the database. */
 
 
 
 /* Listening to the port 5000 and printing the api and the server is running on port 5000. */
 app.listen(5000, () => {
-logger.info(`server is running ${port}`);
+  logger.info(`server is running ${port}`);
 });
