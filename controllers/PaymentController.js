@@ -2,6 +2,8 @@ const paymentModel = require("../models/Payment");
 const joi = require("joi");
 const https = require("https");
 const { v4: uuidv4 } = require("uuid");
+
+
 exports.payment = async (req, res) => {
   const { email, amount, currency, bank, description, payment_status } =
     req.body;
