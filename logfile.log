@@ -336,3 +336,27 @@
 {"level":"info","message":"Database Connection is ready...","timestamp":"2023-07-06 11:18:00"}
 {"level":"info","message":"server is running 5000","timestamp":"2023-07-06 11:21:06"}
 {"level":"info","message":"Database Connection is ready...","timestamp":"2023-07-06 11:21:25"}
+{"level":"info","message":"server is running 5000","timestamp":"2023-07-06 11:31:19"}
+{"level":"info","message":"Database Connection is ready...","timestamp":"2023-07-06 11:31:27"}
+{"level":"info","message":"server is running 5000","timestamp":"2023-07-06 11:36:01"}
+{"level":"info","message":"Database Connection is ready...","timestamp":"2023-07-06 11:36:06"}
+{"level":"info","message":"server is running 5000","timestamp":"2023-07-06 11:37:54"}
+{"level":"info","message":"Database Connection is ready...","timestamp":"2023-07-06 11:38:08"}
+{"level":"info","message":"server is running 5000","timestamp":"2023-07-06 11:40:53"}
+{"level":"info","message":"Database Connection is ready...","timestamp":"2023-07-06 11:41:03"}
+{"level":"info","message":"server is running 5000","timestamp":"2023-07-06 11:42:37"}
+{"level":"info","message":"Database Connection is ready...","timestamp":"2023-07-06 11:42:55"}
+{"level":"info","message":"server is running 5000","timestamp":"2023-07-06 11:44:49"}
+{"level":"info","message":"server is running 5000","timestamp":"2023-07-06 11:45:06"}
+{"level":"info","message":"Database Connection is ready...","timestamp":"2023-07-06 11:45:15"}
+{"level":"info","message":"server is running 5000","timestamp":"2023-07-06 11:48:10"}
+{"code":"ETIMEOUT","hostname":"_mongodb._tcp.pead0.iaxwymt.mongodb.net","level":"error","message":"DB CONNECTION ERROR:  querySrv ETIMEOUT _mongodb._tcp.pead0.iaxwymt.mongodb.net","stack":"Error: querySrv ETIMEOUT _mongodb._tcp.pead0.iaxwymt.mongodb.net\n    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:251:17)","syscall":"querySrv","timestamp":"2023-07-06 11:49:25"}
+{"level":"info","message":"server is running 5000","timestamp":"2023-07-06 11:49:38"}
+{"level":"info","message":"Database Connection is ready...","timestamp":"2023-07-06 11:49:44"}
+{"level":"info","message":"server is running 5000","timestamp":"2023-07-06 11:52:07"}
+{"level":"info","message":"Database Connection is ready...","timestamp":"2023-07-06 11:52:11"}
+{"level":"info","message":"server is running 5000","timestamp":"2023-07-06 11:54:25"}
+{"level":"info","message":"Database Connection is ready...","timestamp":"2023-07-06 11:54:35"}
+{"level":"info","message":"server is running 5000","timestamp":"2023-07-06 12:01:56"}
+{"level":"info","message":"server is running 5000","timestamp":"2023-07-06 12:01:59"}
+{"level":"info","message":"Database Connection is ready...","timestamp":"2023-07-06 12:02:28"}

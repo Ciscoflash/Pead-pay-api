@@ -35,7 +35,7 @@ app.options("*", cors());
 // Initializing the Rate Limiter Feature
 
 const limiter = rateLimit({
-  windowMs: 60 * 50 * 1000, // 1 minute
+  windowMs: 2 * 60 * 1000, // 2 minute
   max: 100, // Maximum 100 requests per minute
   message: "Rate limit exceeded. Please try again later.",
   headers: true,
