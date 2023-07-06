@@ -7,9 +7,17 @@ The Pead Pay API is a RESTful API that allows you to make and receive payments f
 
 The Pead Pay API has the following endpoints:
 
-- `/payment`: This endpoint is used to charge a customer's card.
-- `/refund`: This endpoint is used to refund a customer's payment.
-- `/verify`: This endpoint is used to verify a payment.
+**Payment**
+The base endpoint for payments is `/api/v1/payment/`
+- `/`: This endpoint is used to charge a customer's card and get payments made by a customer.
+- `/paystack`: This endpoint is used to verify and complete payments using Paystack.
+
+**User Auth**
+The base endpoint for user authentication and user related activity is `/api/v1/auth/`
+- `/`: This endpoint is used to get all users registered on the system.
+- `/login`: This endpoint is used to login to get access to the system.
+- `/signup`: This endpoint is used to register to the system.
+- `/:id`: This endpoint is used to either `get` a single user or `delete` a single user.
 
 **Request and Response Bodies**
 
