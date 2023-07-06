@@ -3,7 +3,6 @@ const joi = require("joi");
 const https = require("https");
 const { v4: uuidv4 } = require("uuid");
 
-
 exports.payment = async (req, res) => {
   const { email, amount, currency, bank, description, payment_status } =
     req.body;
@@ -79,4 +78,39 @@ exports.payment = async (req, res) => {
 
   reqpaystack.write(params);
   reqpaystack.end();
+};
+
+exports.getPayment = async (req, res) => {
+  const payment = await paymentModel.find().exec();
+  res.send(payment);
+};
+
+exports.paystackList = async (req, res) => {
+  const https = require("https");
+
+  const options = {
+    hostname: "api.paystack.co",
+    port: 443,
+    path: "/transaction",
+    method: "GET",
+    headers: {
+      Authorization: "Bearer pk_test_e215b12f3e69ab69e6391a8c40ae3bc7ca194f9d",
+    },
+  };
+
+  https
+    .request(options, (respaystack) => {
+      let data = "";
+
+      respaystack.on("data", (chunk) => {
+        data += chunk;
+      });
+
+      respaystack.on("end", () => {
+        console.log(JSON.parse(data));
+      });
+    })
+    .on("error", (error) => {
+      console.error(error);
+    });
 };
