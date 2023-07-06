@@ -18,7 +18,7 @@ mongoDB();
 app.use(
   compression({
     level: 6,
-    threshold: 50 * 1000,
+    threshold: 10 * 1000,
     filter: (req, res) => {
       if (req.headers["x-no-compression"]) {
         return false;
@@ -35,7 +35,7 @@ app.options("*", cors());
 // Initializing the Rate Limiter Feature
 
 const limiter = rateLimit({
-  windowMs: 2 * 60 * 1000, // 2 minute
+  windowMs: 60 * 60 * 1000, // 1 minute
   max: 100, // Maximum 100 requests per minute
   message: "Rate limit exceeded. Please try again later.",
   headers: true,
@@ -63,11 +63,10 @@ app.get("/", (req, res) => {
   res.send("Welcome to PEAD-PAY Payment Server");
 });
 
-// User Routes
 app.use(`/api/v1/auth/`, userRoutes);
 
-// Payment Route
-app.use(`/api/v1/payment/`, paymentRoutes);
+app.use(`/api/v1/payments/`, paymentRoutes);
+/* Connecting to the database. */
 
 /* Listening to the port 5000 and printing the api and the server is running on port 5000. */
 app.listen(5000, () => {
