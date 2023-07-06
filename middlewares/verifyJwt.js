@@ -1,4 +1,5 @@
 const jwt = require('jsonwebtoken');
+const logger = require('../utils/logger')
 require('dotenv').config()
 
 // Middleware to verify and authorize user based on token
@@ -10,9 +11,8 @@ const verifyJwt = () => {
         //if token is valid, authorize
         if(token){
             jwt.verify(token, process.env.SECRET_TOKEN, (err, decodedToken) => {
-                // console.log(decodedToken);
                 if(err) {
-                    console.log(err.message);
+                    logger.info(err.message);
                     res.redirect('/login');
                 } else {
                     if(decodedToken) {

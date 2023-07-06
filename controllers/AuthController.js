@@ -2,6 +2,7 @@ const User = require("../models/User");
 const { hashPassword } = require("../helpers/auth");
 const jwt = require("jsonwebtoken");
 const Joi = require("joi");
+const logger = require('../utils/logger');
 const { v4: uuidv4 } = require("uuid");
 const bcrypt = require("bcrypt");
 
@@ -78,7 +79,7 @@ exports.signup = async (req, res) => {
     });
 
     try {
-      console.log(newUser); // Check the newUser object
+      logger.info(newUser); // Check the newUser object
       await newUser.save();
 
         // Generate JWT token
@@ -86,7 +87,7 @@ exports.signup = async (req, res) => {
 
       return res.status(201).json({ message: "User created successfully", token});
     } catch (saveError) {
-      console.error(saveError); // Log the saveError object for debugging
+      logger.error(saveError); // Log the saveError object for debugging
       return res
         .status(500)
         .json({ error: "Failed to save user to the database" });
@@ -97,7 +98,7 @@ exports.signup = async (req, res) => {
         .status(500)
         .json({ error: "Query timeout. Please try again later." });
     } else {
-      console.error(error);
+      logger.error(error);
       return res.status(500).json({ error: "Server error" });
     }
   }
@@ -150,6 +151,6 @@ exports.login = async (req, res) => {
       res.sendStatus(401);
     }
   } catch (error) {
-    console.log(error);
+    logger.log(error);
   }
 };
