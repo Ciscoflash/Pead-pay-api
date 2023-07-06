@@ -1,6 +1,7 @@
 const paymentModel = require("../models/Payment");
 const joi = require("joi");
 const https = require("https");
+const logger = require('../utils/logger');
 const { v4: uuidv4 } = require("uuid");
 
 exports.payment = async (req, res) => {
@@ -55,11 +56,10 @@ exports.payment = async (req, res) => {
           data: new_payment,
           paystack: data,
         });
-        // console.log(JSON.parse(data));
       });
     })
     .on("error", (error) => {
-      console.error(error);
+      logger.error(error);
     });
 
   // generate uuid for user
@@ -86,11 +86,6 @@ exports.getPayment = async (req, res) => {
   res.json(payment);
 };
 
-function compressContent(content) {
-  const zlib = require("zlib");
-  const buffer = Buffer.from(content, "utf-8");
-  return zlib.gzipSync(buffer);
-}
 exports.paystackList = async (req, res) => {
   const https = require("https");
 
@@ -113,10 +108,10 @@ exports.paystackList = async (req, res) => {
       });
 
       respaystack.on("end", () => {
-        console.log(JSON.parse(data));
+        logger.info(JSON.parse(data));
       });
     })
     .on("error", (error) => {
-      console.error(error);
+      logger.error(error);
     });
 };
