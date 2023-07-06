@@ -23,11 +23,11 @@ The base endpoint for user authentication and user related activity is `/api/v1/
 
 The request and response bodies for the Pead Pay API are JSON objects. The following table shows the required and optional fields for each endpoint:
 
-| Endpoint   | Required Fields                                                        | Optional Fields      |
-|------------|------------------------------------------------------------------------|----------------------|
-| `/payment` | `amount`, `currency`, `customer_email`, `customer_name`, `description` | `metadata`           |
-| `/refund`  | `transaction_id`                                                       | `amount`, `currency` |
-| `/verify`  | `transaction_id`                                                       | `amount`, `currency` |
+| Endpoint   | Required Fields                                                                         | Optional Fields      |
+|------------|-----------------------------------------------------------------------------------------|----------------------|
+| `/signup`  | `first_name`, `first_name`,`last_name`,`phone`,`email``,dob`,`house_address`,`password` | `amount`, `currency` |
+| `/payment` | `amount`, `currency`, `customer_email`, `customer_name`, `description`                  | `metadata`           |
+| `/login`   | `email`, `password`                                                                     | `amount`, `currency` |
 
 **Error Codes**
 
