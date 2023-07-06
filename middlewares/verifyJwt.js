@@ -13,18 +13,18 @@ const verifyJwt = () => {
                 // console.log(decodedToken);
                 if(err) {
                     console.log(err.message);
-                    res.redirect('/login');
+                    res.redirect('/api/v1/auth/login');
                 } else {
                     if(decodedToken) {
                         next();
                     } else {
-                        res.redirect('/login');
+                        res.redirect('/api/v1/auth/login');
                         return res.status(403).send('Access denied. User Unauthorized');
                     }
                 }
             });
         } else {
-            res.redirect('/login');
+            res.redirect('/api/v1/auth/login');
             return res.status(401).send('Access denied. No token provided.');
         }
     };
